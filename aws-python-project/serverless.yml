@@ -9,3 +9,8 @@ provider:
 functions:
   hello:
     handler: handler.hello
+    events:
+      - s3:
+          bucket: somecuteanimals2
+          event: s3:ObjectCreated:*
+      - sns: arn:aws:sns:ap-northeast-1:255945442255:somecuteanimals1
